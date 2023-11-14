@@ -26,11 +26,37 @@ namespace TravailSession
         public MainWindow()
         {
             this.InitializeComponent();
+            mainFrame.Navigate(typeof(PageListeProjet));
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private void abButtonListeEmployé_Click(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Clicked";
+            mainFrame.Navigate(typeof(PageListeEmploye));
+        }
+
+        private void abButtonAjoutEmployé_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(PageAjoutEmploye));
+        }
+
+        private void abButtonListeClient_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(PageListeClient));
+        }
+
+        private void abButtonAjoutClient_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(PageAjoutClient));
+        }
+
+        private void abButtonListeProjet_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(PageListeProjet));
+        }
+
+        private void abButtonAjoutProjet_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(PageAjoutProjet));
         }
     }
 }

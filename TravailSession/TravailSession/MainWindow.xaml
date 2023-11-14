@@ -8,7 +8,29 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <CommandBar Background="MediumPurple" IsOpen="False" DefaultLabelPosition="Right">
+            <AppBarButton Icon="List" Label="Liste des employés" x:Name="abButtonListeEmployé" Click="abButtonListeEmployé_Click"/>
+            <AppBarButton Icon="Add" Label="Ajouter un employé" x:Name="abButtonAjoutEmployé" Click="abButtonAjoutEmployé_Click"/>
+            <AppBarButton Icon="List" Label="Liste des clients" x:Name="abButtonListeClient" Click="abButtonListeClient_Click"/>
+            <AppBarButton Icon="Add" Label="Ajouter un client" x:Name="abButtonAjoutClient" Click="abButtonAjoutClient_Click"/>
+            <AppBarButton Icon="List" Label="Liste des projets" x:Name="abButtonListeProjet" Click="abButtonListeProjet_Click"/>
+            <AppBarButton Icon="Add" Label="Ajouter un projet" x:Name="abButtonAjoutProjet" Click="abButtonAjoutProjet_Click"/>
+        </CommandBar>
+
+        <Frame x:Name="mainFrame" Grid.Row="1" />
+
+
+
+
+
+
+
+
+    </Grid>
 </Window>
