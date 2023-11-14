@@ -14,7 +14,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <CommandBar Background="MediumPurple" IsOpen="False" DefaultLabelPosition="Right">
+        <CommandBar Background="CornflowerBlue" IsOpen="False" DefaultLabelPosition="Right">
             <AppBarButton Icon="List" Label="Liste des employés" x:Name="abButtonListeEmployé" Click="abButtonListeEmployé_Click"/>
             <AppBarButton Icon="Add" Label="Ajouter un employé" x:Name="abButtonAjoutEmployé" Click="abButtonAjoutEmployé_Click"/>
             <AppBarButton Icon="List" Label="Liste des clients" x:Name="abButtonListeClient" Click="abButtonListeClient_Click"/>
