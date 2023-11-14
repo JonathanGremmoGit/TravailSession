@@ -9,8 +9,39 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock Text="AjoutClient" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Ajout de client" HorizontalAlignment="Center" Grid.Row="0" FontWeight="Bold" FontSize="34" Margin="0 25 20 20"/>
+
+        <StackPanel Grid.Row="1" Margin="50 0 10 0" >
+            <TextBox Header="Nom du client" x:Name="tbxNomClient" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250"/>
+            <TextBlock x:Name="tblNomClientErreur" Text="eeeeee" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="50 5 10 0" >
+            <TextBox Header="Adresse du client" x:Name="tbxAdresseClient" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250"/>
+            <TextBlock x:Name="tblAdresseClientErreur" Text="eeeeee" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="50 5 10 0" >
+            <TextBox Header="Numéro de téléphone du client" x:Name="tbxNumeroClient" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250"/>
+            <TextBlock x:Name="tblNumeroClientErreur" Text="eeeeee" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Margin="50 5 10 0" >
+            <TextBox Header="Email du client" x:Name="tbxEmailClient" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250"/>
+            <TextBlock x:Name="tblEmailClientErreur" Text="eeeeee" Foreground="Red"/>
+        </StackPanel>
+
+        <Button x:Name="btConfirmerAjoutClient" Content="Ajouter" Click="btConfirmerAjoutClient_Click" HorizontalAlignment="Center" Grid.Row="5" Margin="20" Width="100" Background="LimeGreen" FontSize="20" />
 
     </Grid>
 </Page>
