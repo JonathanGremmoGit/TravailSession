@@ -27,5 +27,10 @@ namespace TravailSession
         {
             this.InitializeComponent();
         }
+
+        private void btConfirmerAjoutEmploye_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
