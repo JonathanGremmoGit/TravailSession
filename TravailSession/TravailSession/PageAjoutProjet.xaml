@@ -56,7 +56,7 @@
         
         <!-- Utiliser identifiant client-->
 
-        <Button x:Name="btConfirmerAjoutEmploye" Content="Ajouter" Click="btConfirmerAjoutEmploye_Click" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+        <Button x:Name="btConfirmerAjoutProjet" Content="Ajouter" Click="btConfirmerAjoutProjet_Click" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
         Margin="20" Width="100" Background="LimeGreen" FontSize="20" />
 
 

@@ -26,11 +26,37 @@ namespace TravailSession
         public PageAjoutEmploye()
         {
             this.InitializeComponent();
+
+            dtpDateNaissanceEmploye.MinYear = new DateTimeOffset(new DateTime(1958, 1, 1));
+            dtpDateNaissanceEmploye.MaxYear = new DateTimeOffset(new DateTime(2005, 1, 1));
+
+            dtpDateEmbaucheEmploye.MinYear = new DateTimeOffset(new DateTime(1976, 1, 1));
+            dtpDateEmbaucheEmploye.MaxYear = new DateTimeOffset(new DateTime(2023, 1, 1));
         }
 
         private void btConfirmerAjoutEmploye_Click(object sender, RoutedEventArgs e)
         {
+            bool valide = true;
+
+            if (SingletonEmployeValidation.getInstance().isDateNaissanceValide(dtpDateNaissanceEmploye.Date.Year) == false)
+            {
+                tblDateNaissanceEmployeErreur.Text = "Veuillez entrer une date";
+                valide = false;
+            }
+
+            if (SingletonEmployeValidation.getInstance().isDateEmbaucheValide(dtpDateEmbaucheEmploye.Date.Year) == false)
+            {
+                tblDateEmbaucheEmployeErreur.Text = "Veuillez entrer une date";
+                valide = false;
+            }
+
+            if (SingletonEmployeValidation.getInstance().isTauxHoraireValid(nbxTauxHoraireEmploye.Value)  == false)
+            {
+                tblTauxHoraireEmployeErreur.Text = "Veuillez entrer une valeur valide";
+                valide = false;
+            }
 
         }
+
     }
 }

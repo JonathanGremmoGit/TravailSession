@@ -38,7 +38,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="90 10 10 0" >
-            <DatePicker Header="Date de naissance de l'employé" x:Name="tbxDateNaissanceEmploye" />
+            <DatePicker Header="Date de naissance de l'employé" x:Name="dtpDateNaissanceEmploye"/>
             <TextBlock x:Name="tblDateNaissanceEmployeErreur" Text="eeeeee" Foreground="Red"/>
         </StackPanel>
 
@@ -53,13 +53,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
-            <DatePicker Header="Date d'embauche de l'employé" x:Name="tbxDateEmbaucheEmploye"/>
+            <DatePicker Header="Date d'embauche de l'employé" x:Name="dtpDateEmbaucheEmploye"/>
             <TextBlock x:Name="tblDateEmbaucheEmployeErreur" Text="eeeeee" Foreground="Red"/>
         </StackPanel>
 
         <!--Faire un integer/double pour ca-->
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
-            <TextBox Header="Taux horaire de l'employé (au moins 15$/heure)" x:Name="tbxTauxHoraireEmploye" Width="250"/>
+            <NumberBox Header="Taux horaire de l'employé (au moins 15$/heure)" x:Name="nbxTauxHoraireEmploye" Width="250"/>
             <TextBlock x:Name="tblTauxHoraireEmployeErreur" Text="eeeeee" Foreground="Red"/>
         </StackPanel>
         
