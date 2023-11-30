@@ -122,5 +122,27 @@ namespace TravailSession
 
             con.Close();
         }
+
+        public void ModifierInformations(Employe employe, string nouveauNom, string nouveauPrenom, string nouvelEmail, string nouvelleAdresse, double nouveauTauxHoraire, string nouvellePhotoIdentite, string nouveauStatut)
+        {
+            MySqlCommand commande = new MySqlCommand("p_modifier_informations_employe");
+            commande.Connection = con;
+            commande.CommandType = System.Data.CommandType.StoredProcedure;
+            commande.Parameters.AddWithValue("p_Matricule", employe.Matricule);
+            commande.Parameters.AddWithValue("p_NouveauNom", nouveauNom);
+            commande.Parameters.AddWithValue("p_NouveauPrenom", nouveauPrenom);
+            commande.Parameters.AddWithValue("p_NouvelEmail", nouvelEmail);
+            commande.Parameters.AddWithValue("p_NouvelleAdresse", nouvelleAdresse);
+            commande.Parameters.AddWithValue("p_NouveauTauxHoraire", nouveauTauxHoraire);
+            commande.Parameters.AddWithValue("p_NouvellePhotoIdentite", nouvellePhotoIdentite);
+            commande.Parameters.AddWithValue("p_NouveauStatut", nouveauStatut);
+
+            con.Open();
+            commande.Prepare();
+            int i = commande.ExecuteNonQuery();
+
+            con.Close();
+        }
+
     }
 }
