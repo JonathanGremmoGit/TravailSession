@@ -36,11 +36,36 @@ namespace TravailSession
 
         private void btConfirmerAjoutEmploye_Click(object sender, RoutedEventArgs e)
         {
+            resetErreurs();
             bool valide = true;
+
+            if (SingletonEmployeValidation.getInstance().isNomValide(tbxNomEmploye.Text) == false)
+            {
+                tblNomEmployeErreur.Text = "Veuillez entrer un nom";
+                valide = false;
+            }
+
+            if (SingletonEmployeValidation.getInstance().isPrenomValide(tbxPrenomEmploye.Text) == false)
+            {
+                tblPrenomEmployeErreur.Text = "Veuillez entrer un prénom";
+                valide = false;
+            }
 
             if (SingletonEmployeValidation.getInstance().isDateNaissanceValide(dtpDateNaissanceEmploye.Date.Year) == false)
             {
                 tblDateNaissanceEmployeErreur.Text = "Veuillez entrer une date";
+                valide = false;
+            }
+
+            if (SingletonEmployeValidation.getInstance().isEmailValide(tbxEmailEmploye.Text) == false)
+            {
+                tblEmailEmployeErreur.Text = "Veuillez entrer une adresse email";
+                valide = false;
+            }
+
+            if (SingletonEmployeValidation.getInstance().isAdresseValide(tbxAdresseEmploye.Text) == false)
+            {
+                tblAdresseEmployeErreur.Text = "Veuillez entrer une adresse";
                 valide = false;
             }
 
@@ -56,6 +81,30 @@ namespace TravailSession
                 valide = false;
             }
 
+            if (SingletonEmployeValidation.getInstance().isPhotoIdentiteValide(tbxPhotoIdentiteEmploye.Text) == false)
+            {
+                tblPhotoIdentiteEmployeErreur.Text = "Veuillez entrer une URL d'image";
+                valide = false;
+            }
+
+            if (SingletonEmployeValidation.getInstance().isStatusValide(brStatus.SelectedIndex) == false)
+            {
+                tblStatusEmployeErreur.Text = "Veuillez choisir un status";
+                valide = false;
+            }
+        }
+
+        private void resetErreurs()
+        {
+            tblNomEmployeErreur.Text = string.Empty;
+            tblPrenomEmployeErreur.Text = string.Empty;
+            tblDateNaissanceEmployeErreur.Text = string.Empty;
+            tblEmailEmployeErreur.Text = string.Empty;
+            tblAdresseEmployeErreur.Text = string.Empty;
+            tblDateEmbaucheEmployeErreur.Text = string.Empty;
+            tblTauxHoraireEmployeErreur.Text = string.Empty;
+            tblPhotoIdentiteEmployeErreur.Text = string.Empty;
+            tblStatusEmployeErreur.Text = string.Empty;
         }
 
     }

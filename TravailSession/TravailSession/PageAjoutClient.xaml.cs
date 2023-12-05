@@ -30,7 +30,41 @@ namespace TravailSession
 
         private void btConfirmerAjoutClient_Click(object sender, RoutedEventArgs e)
         {
+            resetErreurs();
+            bool valide = true;
 
+            if (SingletonClientValidation.getInstance().isNomValide(tbxNomClient.Text) == false)
+            {
+                tblNomClientErreur.Text = "Veuillez entrer un nom";
+                valide = false;
+            }
+
+            if (SingletonClientValidation.getInstance().isAdresseValide(tbxAdresseClient.Text) == false)
+            {
+                tblAdresseClientErreur.Text = "Veuillez entrer une adresse";
+                valide = false;
+            }
+
+            if (SingletonClientValidation.getInstance().isNumeroTelephoneValide(tbxNumeroTelephoneClient.Text) == false)
+            {
+                tblNumeroTelephoneClientErreur.Text = "Veuillez entrer un numéro de téléphone";
+                valide = false;
+            }
+
+            if (SingletonClientValidation.getInstance().isEmailValide(tbxEmailClient.Text) == false)
+            {
+                tblEmailClientErreur.Text = "Veuillez entrer une adresse email";
+                valide = false;
+            }
         }
+
+        private void resetErreurs()
+        {
+            tblNomClientErreur.Text = string.Empty;
+            tblAdresseClientErreur.Text = string.Empty;
+            tblNumeroTelephoneClientErreur.Text = string.Empty;
+            tblEmailClientErreur.Text = string.Empty;
+        }
+
     }
 }

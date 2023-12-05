@@ -29,29 +29,27 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
             <TextBox Header="Titre du projet" x:Name="tbxTitreProjet" Width="250"/>
-            <TextBlock x:Name="tblTitreProjetErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblTitreProjetErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="90 10 10 0" >
-            <DatePicker Header="Date de début du projet" x:Name="tbxDateDebutProjet" />
-            <TextBlock x:Name="tblDateDebutProjetErreur" Text="eeeeee" Foreground="Red"/>
+            <DatePicker Header="Date de début du projet" x:Name="dtpDateDebutProjet" />
+            <TextBlock x:Name="tblDateDebutProjetErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
             <TextBox Header="Description du projet" x:Name="tbxDescriptionProjet" Width="250"/>
-            <TextBlock x:Name="tblDescriptionProjetErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblDescriptionProjetErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
-        <!--Faire un integer/double pour ca-->
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
-            <TextBox Header="Budget du projet" x:Name="tbxBudgetProjet" Width="250"/>
-            <TextBlock x:Name="tblBudgetProjetErreur" Text="eeeeee" Foreground="Red"/>
+            <NumberBox Header="Budget du projet" x:Name="nbxBudgetProjet" Width="250"/>
+            <TextBlock x:Name="tblBudgetProjetErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
-        <!--Faire un integer/double pour ca-->
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
-            <TextBox Header="Nombre d'employés requis" x:Name="tbxEmployesRequisProjet" Width="250"/>
-            <TextBlock x:Name="tblEmployesRequisErreur" Text="eeeeee" Foreground="Red"/>
+            <NumberBox Header="Nombre d'employés requis (max 5)" x:Name="nbxEmployesRequisProjet" Width="250"/>
+            <TextBlock x:Name="tblEmployesRequisProjetErreur" Text="" Foreground="Red"/>
         </StackPanel>
         
         <!-- Utiliser identifiant client-->

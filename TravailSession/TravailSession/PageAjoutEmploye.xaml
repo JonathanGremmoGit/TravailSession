@@ -29,50 +29,50 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
             <TextBox Header="Nom de l'employé" x:Name="tbxNomEmploye" Width="250"/>
-            <TextBlock x:Name="tblNomEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblNomEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
             <TextBox Header="Prénom de l'employé" x:Name="tbxPrenomEmploye" Width="250"/>
-            <TextBlock x:Name="tblPrenomEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblPrenomEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="90 10 10 0" >
             <DatePicker Header="Date de naissance de l'employé" x:Name="dtpDateNaissanceEmploye"/>
-            <TextBlock x:Name="tblDateNaissanceEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblDateNaissanceEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
             <TextBox Header="Email de l'employé" x:Name="tbxEmailEmploye" Width="250"/>
-            <TextBlock x:Name="tblEmailEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblEmailEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
             <TextBox Header="Adresse de l'employé" x:Name="tbxAdresseEmploye" Width="250"/>
-            <TextBlock x:Name="tblAdresseEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblAdresseEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
             <DatePicker Header="Date d'embauche de l'employé" x:Name="dtpDateEmbaucheEmploye"/>
-            <TextBlock x:Name="tblDateEmbaucheEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblDateEmbaucheEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
-        <!--Faire un integer/double pour ca-->
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
             <NumberBox Header="Taux horaire de l'employé (au moins 15$/heure)" x:Name="nbxTauxHoraireEmploye" Width="250"/>
-            <TextBlock x:Name="tblTauxHoraireEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblTauxHoraireEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
         
         <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
             <TextBox Header="Photo d'identité (URL)" x:Name="tbxPhotoIdentiteEmploye" Width="250"/>
-            <TextBlock x:Name="tblPhotoIdentiteEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <TextBlock x:Name="tblPhotoIdentiteEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <StackPanel Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
-            <TextBlock Text="Status de l'employé" />
-            <RadioButton x:Name="brJournalier" Content="Journalier" />
-            <RadioButton x:Name="brPermanent" Content="Permanent" />
-            <TextBlock x:Name="tblStatusEmployeErreur" Text="eeeeee" Foreground="Red"/>
+            <RadioButtons x:Name="brStatus" Header="Status de l'employé">
+                <x:String>Journalier</x:String>
+                <x:String>Permanent</x:String>
+            </RadioButtons>
+            <TextBlock x:Name="tblStatusEmployeErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
         <Button x:Name="btConfirmerAjoutEmploye" Content="Ajouter" Click="btConfirmerAjoutEmploye_Click" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 

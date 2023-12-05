@@ -22,6 +22,46 @@ namespace TravailSession
             return instance;
         }
 
+        public bool isTitreValide(string titre)
+        {
+            if (!string.IsNullOrEmpty(titre.Trim()))
+                return true;
+            else
+                return false;
+        }
+
+        public bool isDateDebutValide(int dateDebut)
+        {
+            if (dateDebut != 1600)
+                return true;
+            else
+                return false;
+        }
+
+        public bool isDescriptionValide(string description)
+        {
+            if (!string.IsNullOrEmpty(description.Trim()))
+                return true;
+            else
+                return false;
+        }
+
+        public bool isBudgetValide(string budget)
+        {
+            if (!string.IsNullOrEmpty(budget.Trim()))
+                return true;
+            else
+                return false;
+        }
+
+        public bool isEmployesRequisValide(double nbEmployesRequis)
+        {
+            if (nbEmployesRequis <= 5)
+                return true;
+            else
+                return false;
+        }
+
 
 
 

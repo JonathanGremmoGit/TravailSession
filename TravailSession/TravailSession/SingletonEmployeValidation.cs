@@ -78,6 +78,22 @@ namespace TravailSession
                 return false;
         }
 
+        public bool isPhotoIdentiteValide(string photoIdentite)
+        {
+            if (!string.IsNullOrEmpty(photoIdentite.Trim()))
+                return true;
+            else
+                return false;
+        }
+
+        public bool isStatusValide(int status)
+        {
+            if (status != -1)
+                return true;
+            else
+                return false;
+        }
+
 
 
 

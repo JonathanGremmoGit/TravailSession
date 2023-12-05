@@ -22,6 +22,38 @@ namespace TravailSession
             return instance;
         }
 
+        public bool isNomValide(string nom)
+        {
+            if (!string.IsNullOrEmpty(nom.Trim()))
+                return true;
+            else
+                return false;
+        }
+
+        public bool isAdresseValide(string adresse)
+        {
+            if (!string.IsNullOrEmpty(adresse.Trim()))
+                return true;
+            else
+                return false;
+        }
+
+        public bool isNumeroTelephoneValide(string numeroTelephone)
+        {
+            if (!string.IsNullOrEmpty(numeroTelephone.Trim()))
+                return true;
+            else
+                return false;
+        }
+
+        public bool isEmailValide(string email)
+        {
+            if (!string.IsNullOrEmpty(email.Trim()))
+                return true;
+            else
+                return false;
+        }
+
 
 
 
