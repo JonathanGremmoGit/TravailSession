@@ -10,7 +10,7 @@ namespace TravailSession
 {
     internal class SingletonProjet
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Database=exointerfacemaison2;Uid=root;Pwd=;");
+        MySqlConnection con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2023_420325ri_fabeq15;Uid=1842975;Pwd=1842975;");
 
         ObservableCollection<Projet> liste;
         static SingletonProjet instance = null;
@@ -158,6 +158,31 @@ namespace TravailSession
             }
 
             return employes;
+        }
+
+        public decimal CalculerTotalSalairesPourProjet(int projetNumero)
+        {
+            decimal totalSalaires = 0;
+
+            using (MySqlCommand commande = new MySqlCommand("p_calculer_total_salaires_projet", con))
+            {
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
+                commande.Parameters.AddWithValue("p_ProjetNumero", projetNumero);
+
+                con.Open();
+
+                using (MySqlDataReader r = commande.ExecuteReader())
+                {
+                    while (r.Read())
+                    {
+                        totalSalaires = (decimal)r["totalSalaires"];
+                    }
+                }
+            }
+
+            con.Close();
+
+            return totalSalaires;
         }
 
 

@@ -5,6 +5,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Microsoft.WindowsAppSDK.Runtime.Packages;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -91,6 +92,23 @@ namespace TravailSession
             {
                 tblStatusEmployeErreur.Text = "Veuillez choisir un status";
                 valide = false;
+            }
+            if (valide == true)
+            {
+                Employe employe = new Employe
+                {
+                    Matricule = "",
+                    Nom = tbxNomEmploye.Text,
+                    Prenom = tbxPrenomEmploye.Text,
+                    DateNaissance = dtpDateNaissanceEmploye.Date.Date,
+                    Email = tbxEmailEmploye.Text,
+                    Adresse = tbxAdresseEmploye.Text,
+                    DateEmbauche = dtpDateEmbaucheEmploye.Date.Date,
+                    TauxHoraire = nbxTauxHoraireEmploye.Value,
+                    PhotoIdentite = tbxPhotoIdentiteEmploye.Text,
+                    Statut = brStatus.SelectedItem.ToString()
+                };
+                SingletonEmploye.getInstance().Ajouter(employe);
             }
         }
 

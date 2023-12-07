@@ -11,7 +11,7 @@ namespace TravailSession
 {
     internal class SingletonEmploye
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Database=exointerfacemaison2;Uid=root;Pwd=;");
+        MySqlConnection con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2023_420325ri_fabeq15;Uid=1842975;Pwd=1842975;");
 
         ObservableCollection<Employe> liste;
         static SingletonEmploye instance = null;

@@ -6,6 +6,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -65,6 +66,22 @@ namespace TravailSession
             {
                 tblEmployesRequisProjetErreur.Text = "Veuillez entrer une valeur valide";
                 valide = false;
+            }
+            if (valide == true)
+            {
+                Projet projet = new Projet
+                {
+                    NumeroProjet = 0,
+                    Titre = tbxTitreProjet.Text,
+                    DateDebut = dtpDateDebutProjet.Date.Date,
+                    Description = tbxDescriptionProjet.Text,
+                    Budget = Decimal.Parse(nbxBudgetProjet.Text),
+                    NombreEmployesRequis = (int)nbxEmployesRequisProjet.Value,
+                    TotalSalairesPayer = 0,
+                    ClientIdentifiant = 0,
+                    Statut = ""
+                };
+                SingletonProjet.getInstance().AjouterProjet(projet);
             }
         }
 
