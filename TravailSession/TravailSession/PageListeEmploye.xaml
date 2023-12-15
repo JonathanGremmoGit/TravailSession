@@ -9,7 +9,24 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock Text="ListeEmploye" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    <Grid Background="LightGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Liste des employés" Margin="15" FontSize="40" Grid.Row="0" HorizontalAlignment="Center"/>
+
+        <GridView x:Name="gvListeEmployes" Grid.Row="1" Padding="20" SelectionChanged="gvListeEmployes_SelectionChanged" HorizontalAlignment="Center">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="local:Employe">
+                    <StackPanel Margin="10" Padding="5" HorizontalAlignment="Stretch" Width="175">
+                        <TextBlock Text="{x:Bind Prenom}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind Nom}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind Email}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind Statut}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>

@@ -26,6 +26,12 @@ namespace TravailSession
         public PageListeClient()
         {
             this.InitializeComponent();
+            gvListeClients.ItemsSource = SingletonClient.getInstance().GetListeClients();
+        }
+
+        private void gvListeClients_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

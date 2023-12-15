@@ -1,17 +1,17 @@
 ﻿using Microsoft.WindowsAppSDK.Runtime.Packages;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 namespace TravailSession
 {
     internal class SingletonEmploye
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Database=exointerfacemaison2;Uid=root;Pwd=;");
+        MySqlConnection con = new MySqlConnection("Server=cours.cegep3r.info;Database=database1(placeholder);Uid=2003317;Pwd=2003317;");
 
         ObservableCollection<Employe> liste;
         static SingletonEmploye instance = null;
@@ -19,6 +19,14 @@ namespace TravailSession
         public SingletonEmploye()
         {
             liste = new ObservableCollection<Employe>();
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "jonathangsxm@gmail.com", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "bongbong@gmail.com", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
+            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
         }
 
         public static SingletonEmploye getInstance()
@@ -31,39 +39,42 @@ namespace TravailSession
 
         public ObservableCollection<Employe> GetListeEmployes()
         {
-            liste.Clear();
 
-            MySqlCommand commande = new MySqlCommand("p_get_liste_employes");
-            commande.Connection = con;
-            commande.CommandType = System.Data.CommandType.StoredProcedure;
+            //Enlever les commentaires plus tard quand la BD est la
 
-            con.Open();
+            //liste.Clear();
 
-            MySqlDataReader r = commande.ExecuteReader();
+            //MySqlCommand commande = new MySqlCommand("p_get_liste_employes");
+            //commande.Connection = con;
+            //commande.CommandType = System.Data.CommandType.StoredProcedure;
 
-            while (r.Read())
-            {
-                string matricule = (string)r["matricule"];
-                string nom = (string)r["nom"];
-                string prenom = (string)r["prenom"];
-                DateTime dateNaissance = (DateTime)r["dateNaissance"];
-                string email = (string)r["email"];
-                string adresse = (string)r["adresse"];
-                DateTime dateEmbauche = (DateTime)r["dateEmbauche"];
-                double tauxHoraire = (double)r["tauxHoraire"];
-                string photoIdentite = (string)r["photoIdentite"];
-                string statut = (string)r["statut"];
+            //con.Open();
 
-                Employe employe = new Employe { Matricule = matricule, Nom = nom, Prenom = prenom,
-                    DateNaissance = dateNaissance, Email = email, Adresse = adresse, DateEmbauche = dateEmbauche,
-                    TauxHoraire = tauxHoraire, PhotoIdentite = photoIdentite, Statut = statut };
+            //MySqlDataReader r = commande.ExecuteReader();
 
-                liste.Add(employe);
-            }
+            //while (r.Read())
+            //{
+            //    string matricule = (string)r["matricule"];
+            //    string nom = (string)r["nom"];
+            //    string prenom = (string)r["prenom"];
+            //    DateTime dateNaissance = (DateTime)r["dateNaissance"];
+            //    string email = (string)r["email"];
+            //    string adresse = (string)r["adresse"];
+            //    DateTime dateEmbauche = (DateTime)r["dateEmbauche"];
+            //    double tauxHoraire = (double)r["tauxHoraire"];
+            //    string photoIdentite = (string)r["photoIdentite"];
+            //    string statut = (string)r["statut"];
 
-            r.Close();
+            //    Employe employe = new Employe { Matricule = matricule, Nom = nom, Prenom = prenom,
+            //        DateNaissance = dateNaissance, Email = email, Adresse = adresse, DateEmbauche = dateEmbauche,
+            //        TauxHoraire = tauxHoraire, PhotoIdentite = photoIdentite, Statut = statut };
 
-            con.Close();
+            //    liste.Add(employe);
+            //}
+
+            //r.Close();
+
+            //con.Close();
 
             return liste;
         }

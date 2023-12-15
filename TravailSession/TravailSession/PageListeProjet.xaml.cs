@@ -26,6 +26,12 @@ namespace TravailSession
         public PageListeProjet()
         {
             this.InitializeComponent();
+            gvListeProjets.ItemsSource = SingletonProjet.getInstance().GetListeProjets();
+        }
+
+        private void gvListeProjets_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

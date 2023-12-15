@@ -9,7 +9,23 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock Text="ListeProjet" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    <Grid Background="Beige">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Liste des projets" Margin="15" FontSize="40" Grid.Row="0" HorizontalAlignment="Center"/>
+
+        <GridView x:Name="gvListeProjets" Grid.Row="1" Padding="20" SelectionChanged="gvListeProjets_SelectionChanged" HorizontalAlignment="Center">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="local:Projet" >
+                    <StackPanel Padding="10" HorizontalAlignment="Stretch">
+                        <TextBlock Text="{x:Bind Titre}" FontSize="18" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind DateDebut}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind Description}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>

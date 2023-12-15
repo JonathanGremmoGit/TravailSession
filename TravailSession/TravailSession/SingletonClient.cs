@@ -10,7 +10,7 @@ namespace TravailSession
 {
     internal class SingletonClient
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Database=exointerfacemaison2;Uid=root;Pwd=;");
+        MySqlConnection con = new MySqlConnection("Server=cours.cegep3r.info;Database=database1(placeholder);Uid=2003317;Pwd=2003317;");
 
         ObservableCollection<Client> liste;
         static SingletonClient instance = null;
@@ -18,6 +18,21 @@ namespace TravailSession
         public SingletonClient()
         {
             liste = new ObservableCollection<Client>();
+            liste.Add(new Client { Identifiant = 100, Nom = "Robot", Adresse = "Library", NumeroTelephone = "819-101-0101", Email = "bookburner@gmail.com" });
+            liste.Add(new Client { Identifiant = 101, Nom = "Lolan", Adresse = "District 9", NumeroTelephone = "819-609-0341", Email = "grade9@gmail.com" });
+            liste.Add(new Client { Identifiant = 420, Nom = "Nutsack", Adresse = "District 12", NumeroTelephone = "819-420-6969", Email = "stoner@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
+            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
         }
 
         public static SingletonClient getInstance()
@@ -30,39 +45,42 @@ namespace TravailSession
 
         public ObservableCollection<Client> GetListeClients()
         {
-            liste.Clear();
 
-            MySqlCommand commande = new MySqlCommand("p_get_liste_clients");
-            commande.Connection = con;
-            commande.CommandType = System.Data.CommandType.StoredProcedure;
+            //Enlever les commentaires plus tard quand la BD est la
 
-            con.Open();
+            //liste.Clear();
 
-            MySqlDataReader r = commande.ExecuteReader();
+            //MySqlCommand commande = new MySqlCommand("p_get_liste_clients");
+            //commande.Connection = con;
+            //commande.CommandType = System.Data.CommandType.StoredProcedure;
 
-            while (r.Read())
-            {
-                int identifiant = (int)r["identifiant"];
-                string nom = (string)r["nom"];
-                string adresse = (string)r["adresse"];
-                string numeroTelephone = (string)r["numeroTelephone"];
-                string email = (string)r["email"];
+            //con.Open();
 
-                Client client = new Client
-                {
-                    Identifiant = identifiant,
-                    Nom = nom,
-                    Adresse = adresse,
-                    NumeroTelephone = numeroTelephone,
-                    Email = email
-                };
+            //MySqlDataReader r = commande.ExecuteReader();
 
-                liste.Add(client);
-            }
+            //while (r.Read())
+            //{
+            //    int identifiant = (int)r["identifiant"];
+            //    string nom = (string)r["nom"];
+            //    string adresse = (string)r["adresse"];
+            //    string numeroTelephone = (string)r["numeroTelephone"];
+            //    string email = (string)r["email"];
 
-            r.Close();
+            //    Client client = new Client
+            //    {
+            //        Identifiant = identifiant,
+            //        Nom = nom,
+            //        Adresse = adresse,
+            //        NumeroTelephone = numeroTelephone,
+            //        Email = email
+            //    };
 
-            con.Close();
+            //    liste.Add(client);
+            //}
+
+            //r.Close();
+
+            //con.Close();
 
             return liste;
         }

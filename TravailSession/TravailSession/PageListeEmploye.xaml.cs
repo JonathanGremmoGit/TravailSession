@@ -26,6 +26,12 @@ namespace TravailSession
         public PageListeEmploye()
         {
             this.InitializeComponent();
+            gvListeEmployes.ItemsSource = SingletonEmploye.getInstance().GetListeEmployes();
+        }
+
+        private void gvListeEmployes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

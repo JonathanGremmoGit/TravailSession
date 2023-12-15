@@ -10,7 +10,7 @@ namespace TravailSession
 {
     internal class SingletonProjet
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Database=exointerfacemaison2;Uid=root;Pwd=;");
+        MySqlConnection con = new MySqlConnection("Server=cours.cegep3r.info;Database=database1(placeholder);Uid=2003317;Pwd=2003317;");
 
         ObservableCollection<Projet> liste;
         static SingletonProjet instance = null;
@@ -18,6 +18,17 @@ namespace TravailSession
         public SingletonProjet()
         {
             liste = new ObservableCollection<Projet>();
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneeeee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneeee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneeeee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptione", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
+            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
         }
 
         public static SingletonProjet getInstance()
@@ -52,47 +63,50 @@ namespace TravailSession
 
         public ObservableCollection<Projet> GetListeProjets()
         {
-            liste.Clear();
 
-            MySqlCommand commande = new MySqlCommand("p_get_liste_projets");
-            commande.Connection = con;
-            commande.CommandType = System.Data.CommandType.StoredProcedure;
+            //Enlever les commentaires plus tard quand la BD est la
 
-            con.Open();
+            //liste.Clear();
 
-            MySqlDataReader r = commande.ExecuteReader();
+            //MySqlCommand commande = new MySqlCommand("p_get_liste_projets");
+            //commande.Connection = con;
+            //commande.CommandType = System.Data.CommandType.StoredProcedure;
 
-            while (r.Read())
-            {
-                int numeroProjet = (int)r["numeroProjet"];
-                string titre = (string)r["titre"];
-                DateTime dateDebut = (DateTime)r["dateDebut"];
-                string description = (string)r["description"];
-                decimal budget = (decimal)r["budget"];
-                int nombreEmployesRequis = (int)r["nombreEmployesRequis"];
-                decimal totalSalairesPayer = (decimal)r["totalSalairesPayer"];
-                int clientIdentifiant = (int)r["clientIdentifiant"];
-                string statut = (string)r["statut"];
+            //con.Open();
 
-                Projet projet = new Projet
-                {
-                    NumeroProjet = numeroProjet,
-                    Titre = titre,
-                    DateDebut = dateDebut,
-                    Description = description,
-                    Budget = budget,
-                    NombreEmployesRequis = nombreEmployesRequis,
-                    TotalSalairesPayer = totalSalairesPayer,
-                    ClientIdentifiant = clientIdentifiant,
-                    Statut = statut
-                };
+            //MySqlDataReader r = commande.ExecuteReader();
 
-                liste.Add(projet);
-            }
+            //while (r.Read())
+            //{
+            //    int numeroProjet = (int)r["numeroProjet"];
+            //    string titre = (string)r["titre"];
+            //    DateTime dateDebut = (DateTime)r["dateDebut"];
+            //    string description = (string)r["description"];
+            //    decimal budget = (decimal)r["budget"];
+            //    int nombreEmployesRequis = (int)r["nombreEmployesRequis"];
+            //    decimal totalSalairesPayer = (decimal)r["totalSalairesPayer"];
+            //    int clientIdentifiant = (int)r["clientIdentifiant"];
+            //    string statut = (string)r["statut"];
 
-            r.Close();
+            //    Projet projet = new Projet
+            //    {
+            //        NumeroProjet = numeroProjet,
+            //        Titre = titre,
+            //        DateDebut = dateDebut,
+            //        Description = description,
+            //        Budget = budget,
+            //        NombreEmployesRequis = nombreEmployesRequis,
+            //        TotalSalairesPayer = totalSalairesPayer,
+            //        ClientIdentifiant = clientIdentifiant,
+            //        Statut = statut
+            //    };
 
-            con.Close();
+            //    liste.Add(projet);
+            //}
+
+            //r.Close();
+
+            //con.Close();
 
             return liste;
         }
