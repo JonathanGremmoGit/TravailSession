@@ -174,6 +174,31 @@ namespace TravailSession
             return employes;
         }
 
+        public decimal CalculerTotalSalairesPourProjet(int projetNumero)
+        {
+            decimal totalSalaires = 0;
+
+            using (MySqlCommand commande = new MySqlCommand("p_calculer_total_salaires_projet", con))
+            {
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
+                commande.Parameters.AddWithValue("p_ProjetNumero", projetNumero);
+
+                con.Open();
+
+                using (MySqlDataReader r = commande.ExecuteReader())
+                {
+                    while (r.Read())
+                    {
+                        totalSalaires = (decimal)r["totalSalaires"];
+                    }
+                }
+            }
+
+            con.Close();
+
+            return totalSalaires;
+        }
+
 
     }
 }

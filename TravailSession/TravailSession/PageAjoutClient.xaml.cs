@@ -5,6 +5,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Microsoft.WindowsAppSDK.Runtime.Packages;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -55,6 +56,18 @@ namespace TravailSession
             {
                 tblEmailClientErreur.Text = "Veuillez entrer une adresse email";
                 valide = false;
+            }
+            if (valide == true)
+            {
+                Client client = new Client
+                {
+                    Identifiant = 0,
+                    Nom = tbxNomClient.Text,
+                    Adresse = tbxAdresseClient.Text,
+                    NumeroTelephone = tbxNumeroTelephoneClient.Text,
+                    Email = tbxEmailClient.Text
+                };
+                SingletonClient.getInstance().Ajouter(client);
             }
         }
 
