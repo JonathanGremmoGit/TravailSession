@@ -10,7 +10,7 @@ namespace TravailSession
 {
     internal class SingletonProjet
     {
-        MySqlConnection con = new MySqlConnection("Server=cours.cegep3r.info;Database=database1(placeholder);Uid=2003317;Pwd=2003317;");
+        MySqlConnection con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2023_420325ri_fabeq15;Uid=1842975;Pwd=1842975;");
 
         ObservableCollection<Projet> liste;
         static SingletonProjet instance = null;
