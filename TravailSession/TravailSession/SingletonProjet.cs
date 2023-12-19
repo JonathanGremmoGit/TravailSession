@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,6 +41,7 @@ namespace TravailSession
             commande.Parameters.AddWithValue("p_Description", $"{projet.Description}");
             commande.Parameters.AddWithValue("p_Budget", projet.Budget);
             commande.Parameters.AddWithValue("p_NombreEmployesRequis", projet.NombreEmployesRequis);
+            commande.Parameters.AddWithValue("p_ClientIdentifiant", projet.ClientIdentifiant);
             commande.Parameters.AddWithValue("p_TotalSalairesPayer", projet.TotalSalairesPayer);
             commande.Parameters.AddWithValue("p_Statut", $"{projet.Statut}");
 
@@ -48,6 +51,7 @@ namespace TravailSession
 
             con.Close();
         }
+
 
         public ObservableCollection<Projet> GetListeProjets()
         {
@@ -184,6 +188,25 @@ namespace TravailSession
 
             return totalSalaires;
         }
+
+        public bool ClientExiste(int clientIdentifiant)
+        {
+            bool existe = false;
+            string query = "SELECT COUNT(*) FROM Client WHERE Identifiant = @clientIdentifiant";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@clientIdentifiant", clientIdentifiant);
+                con.Open();
+
+                existe = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+
+                con.Close();
+            }
+            
+            return existe;
+        }
+
 
 
     }

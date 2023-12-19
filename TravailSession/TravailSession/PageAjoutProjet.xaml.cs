@@ -44,6 +44,12 @@ namespace TravailSession
                 valide = false;
             }
 
+            if(SingletonProjet.getInstance().ClientExiste((int)nbxNumeroClient.Value) == false)
+            {
+                tblNumeroClientErreur.Text = "Veuillez entrer un numéro de client valide";
+                valide = false;
+            }
+
             if (SingletonEmployeValidation.getInstance().isDateNaissanceValide(dtpDateDebutProjet.Date.Year) == false)
             {
                 tblDateDebutProjetErreur.Text = "Veuillez entrer une date";
@@ -78,6 +84,7 @@ namespace TravailSession
                     Budget = Decimal.Parse(nbxBudgetProjet.Text),
                     NombreEmployesRequis = (int)nbxEmployesRequisProjet.Value,
                     TotalSalairesPayer = 0,
+                    ClientIdentifiant = (int)nbxNumeroClient.Value,
                     Statut = "En cours"
                 };
                 SingletonProjet.getInstance().AjouterProjet(projet);
@@ -91,6 +98,8 @@ namespace TravailSession
             tblDescriptionProjetErreur.Text = string.Empty;
             tblBudgetProjetErreur.Text = string.Empty;
             tblEmployesRequisProjetErreur.Text = string.Empty;
+            tblNumeroClientErreur.Text = string.Empty;
+
         }
 
     }

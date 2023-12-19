@@ -47,6 +47,11 @@
             <TextBlock x:Name="tblBudgetProjetErreur" Text="" Foreground="Red"/>
         </StackPanel>
 
+        <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <NumberBox Header="Numéro de client" x:Name="nbxNumeroClient" Width="250"/>
+            <TextBlock x:Name="tblNumeroClientErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
             <NumberBox Header="Nombre d'employés requis (max 5)" x:Name="nbxEmployesRequisProjet" Width="250"/>
             <TextBlock x:Name="tblEmployesRequisProjetErreur" Text="" Foreground="Red"/>
@@ -56,6 +61,8 @@
 
         <Button x:Name="btConfirmerAjoutProjet" Content="Ajouter" Click="btConfirmerAjoutProjet_Click" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
         Margin="20" Width="100" Background="LimeGreen" FontSize="20" />
+
+
 
 
     </Grid>
