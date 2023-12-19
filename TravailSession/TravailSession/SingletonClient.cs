@@ -46,41 +46,39 @@ namespace TravailSession
         public ObservableCollection<Client> GetListeClients()
         {
 
-            //Enlever les commentaires plus tard quand la BD est la
+            liste.Clear();
 
-            //liste.Clear();
+            MySqlCommand commande = new MySqlCommand("p_get_liste_clients");
+            commande.Connection = con;
+            commande.CommandType = System.Data.CommandType.StoredProcedure;
 
-            //MySqlCommand commande = new MySqlCommand("p_get_liste_clients");
-            //commande.Connection = con;
-            //commande.CommandType = System.Data.CommandType.StoredProcedure;
+            con.Open();
 
-            //con.Open();
+            MySqlDataReader r = commande.ExecuteReader();
 
-            //MySqlDataReader r = commande.ExecuteReader();
+            while (r.Read())
+            {
+                int identifiant = (int)r["identifiant"];
+                string nom = (string)r["nom"];
+                string adresse = (string)r["adresse"];
+                string numeroTelephone = (string)r["numeroTelephone"];
+                string email = (string)r["email"];
 
-            //while (r.Read())
-            //{
-            //    int identifiant = (int)r["identifiant"];
-            //    string nom = (string)r["nom"];
-            //    string adresse = (string)r["adresse"];
-            //    string numeroTelephone = (string)r["numeroTelephone"];
-            //    string email = (string)r["email"];
+                Client client = new Client
+                {
+                    Identifiant = identifiant,
+                    Nom = nom,
+                    Adresse = adresse,
+                    NumeroTelephone = numeroTelephone,
+                    Email = email
+                };
 
-            //    Client client = new Client
-            //    {
-            //        Identifiant = identifiant,
-            //        Nom = nom,
-            //        Adresse = adresse,
-            //        NumeroTelephone = numeroTelephone,
-            //        Email = email
-            //    };
+                liste.Add(client);
+            }
 
-            //    liste.Add(client);
-            //}
+            r.Close();
 
-            //r.Close();
-
-            //con.Close();
+            con.Close();
 
             return liste;
         }

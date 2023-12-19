@@ -71,15 +71,14 @@ namespace TravailSession
             {
                 Projet projet = new Projet
                 {
-                    NumeroProjet = 0,
+                    NumeroProjet = "test0",
                     Titre = tbxTitreProjet.Text,
                     DateDebut = dtpDateDebutProjet.Date.Date,
                     Description = tbxDescriptionProjet.Text,
                     Budget = Decimal.Parse(nbxBudgetProjet.Text),
                     NombreEmployesRequis = (int)nbxEmployesRequisProjet.Value,
                     TotalSalairesPayer = 0,
-                    ClientIdentifiant = 0,
-                    Statut = ""
+                    Statut = "En cours"
                 };
                 SingletonProjet.getInstance().AjouterProjet(projet);
             }

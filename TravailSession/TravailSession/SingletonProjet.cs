@@ -18,17 +18,6 @@ namespace TravailSession
         public SingletonProjet()
         {
             liste = new ObservableCollection<Projet>();
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneeeee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneeee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptioneeeee", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue descriptione", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
-            liste.Add(new Projet { NumeroProjet = 1, Titre = "Bob go skreeeeeeeeeeeee", DateDebut = DateTime.Now.Date, Description = "Longue description", Budget = 50, NombreEmployesRequis = 3, TotalSalairesPayer = 50000, ClientIdentifiant = 100, Statut = "En cours"});
         }
 
         public static SingletonProjet getInstance()
@@ -44,14 +33,13 @@ namespace TravailSession
             MySqlCommand commande = new MySqlCommand("p_ajouter_projet");
             commande.Connection = con;
             commande.CommandType = System.Data.CommandType.StoredProcedure;
-            commande.Parameters.AddWithValue("p_NumeroProjet", projet.NumeroProjet);
+            commande.Parameters.AddWithValue("p_NumeroProjet", $"{projet.NumeroProjet}");
             commande.Parameters.AddWithValue("p_Titre", $"{projet.Titre}");
             commande.Parameters.AddWithValue("p_DateDebut", projet.DateDebut);
             commande.Parameters.AddWithValue("p_Description", $"{projet.Description}");
             commande.Parameters.AddWithValue("p_Budget", projet.Budget);
             commande.Parameters.AddWithValue("p_NombreEmployesRequis", projet.NombreEmployesRequis);
             commande.Parameters.AddWithValue("p_TotalSalairesPayer", projet.TotalSalairesPayer);
-            commande.Parameters.AddWithValue("p_ClientIdentifiant", projet.ClientIdentifiant);
             commande.Parameters.AddWithValue("p_Statut", $"{projet.Statut}");
 
             con.Open();
@@ -64,49 +52,47 @@ namespace TravailSession
         public ObservableCollection<Projet> GetListeProjets()
         {
 
-            //Enlever les commentaires plus tard quand la BD est la
+            liste.Clear();
 
-            //liste.Clear();
+            MySqlCommand commande = new MySqlCommand("p_get_liste_projets");
+            commande.Connection = con;
+            commande.CommandType = System.Data.CommandType.StoredProcedure;
 
-            //MySqlCommand commande = new MySqlCommand("p_get_liste_projets");
-            //commande.Connection = con;
-            //commande.CommandType = System.Data.CommandType.StoredProcedure;
+            con.Open();
 
-            //con.Open();
+            MySqlDataReader r = commande.ExecuteReader();
 
-            //MySqlDataReader r = commande.ExecuteReader();
+            while (r.Read())
+            {
+                string numeroProjet = (string)r["numeroProjet"];
+                string titre = (string)r["titre"];
+                DateTime dateDebut = (DateTime)r["dateDebut"];
+                string description = (string)r["description"];
+                decimal budget = (decimal)r["budget"];
+                int nombreEmployesRequis = (int)r["nombreEmployesRequis"];
+                decimal totalSalairesPayer = (decimal)r["totalSalairesPayer"];
+                int clientIdentifiant = (int)r["clientIdentifiant"];
+                string statut = (string)r["statut"];
 
-            //while (r.Read())
-            //{
-            //    int numeroProjet = (int)r["numeroProjet"];
-            //    string titre = (string)r["titre"];
-            //    DateTime dateDebut = (DateTime)r["dateDebut"];
-            //    string description = (string)r["description"];
-            //    decimal budget = (decimal)r["budget"];
-            //    int nombreEmployesRequis = (int)r["nombreEmployesRequis"];
-            //    decimal totalSalairesPayer = (decimal)r["totalSalairesPayer"];
-            //    int clientIdentifiant = (int)r["clientIdentifiant"];
-            //    string statut = (string)r["statut"];
+                Projet projet = new Projet
+                {
+                    NumeroProjet = numeroProjet,
+                    Titre = titre,
+                    DateDebut = dateDebut,
+                    Description = description,
+                    Budget = budget,
+                    NombreEmployesRequis = nombreEmployesRequis,
+                    TotalSalairesPayer = totalSalairesPayer,
+                    ClientIdentifiant = clientIdentifiant,
+                    Statut = statut
+                };
 
-            //    Projet projet = new Projet
-            //    {
-            //        NumeroProjet = numeroProjet,
-            //        Titre = titre,
-            //        DateDebut = dateDebut,
-            //        Description = description,
-            //        Budget = budget,
-            //        NombreEmployesRequis = nombreEmployesRequis,
-            //        TotalSalairesPayer = totalSalairesPayer,
-            //        ClientIdentifiant = clientIdentifiant,
-            //        Statut = statut
-            //    };
+                liste.Add(projet);
+            }
 
-            //    liste.Add(projet);
-            //}
+            r.Close();
 
-            //r.Close();
-
-            //con.Close();
+            con.Close();
 
             return liste;
         }

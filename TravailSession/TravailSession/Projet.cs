@@ -8,7 +8,7 @@ namespace TravailSession
 {
     internal class Projet
     {
-        public int NumeroProjet { get; set; }
+        public string NumeroProjet { get; set; }
         public string Titre { get; set; }
         public DateTime DateDebut { get; set; }
         public string Description { get; set; }
