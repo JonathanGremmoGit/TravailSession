@@ -30,6 +30,11 @@ namespace TravailSession
             return instance;
         }
 
+        public Projet getProjet(int position)
+        {
+            return liste[position];
+        }
+
         public void AjouterProjet(Projet projet)
         {
             MySqlCommand commande = new MySqlCommand("p_ajouter_projet");

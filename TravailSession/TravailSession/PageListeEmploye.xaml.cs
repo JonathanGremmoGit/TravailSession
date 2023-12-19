@@ -31,7 +31,8 @@ namespace TravailSession
 
         private void gvListeEmployes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (gvListeEmployes.SelectedIndex >= 0)
+            this.Frame.Navigate(typeof(PageModifierEmploye), gvListeEmployes.SelectedIndex);
         }
     }
 }

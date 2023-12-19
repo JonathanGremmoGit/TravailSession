@@ -20,14 +20,6 @@ namespace TravailSession
         public SingletonEmploye()
         {
             liste = new ObservableCollection<Employe>();
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "jonathangsxm@gmail.com", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "bongbong@gmail.com", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
-            liste.Add(new Employe { Matricule = "147423547", Nom = "dfdbrsb", Prenom = "gsfsfefsg", DateNaissance = DateTime.Now.Date, Email = "svsvsvv", Adresse = "HFGBFDGB", DateEmbauche = DateTime.Now.Date, TauxHoraire = 20, PhotoIdentite = "dfvsfsf", Statut = "Permanent"});
         }
 
         public static SingletonEmploye getInstance()
@@ -36,6 +28,16 @@ namespace TravailSession
                 instance = new SingletonEmploye();
 
             return instance;
+        }
+
+        public Employe getEmploye(int position)
+        {
+            return liste[position];
+        }
+
+        public void modifier(int position, Employe employe)
+        {
+            liste[position] = employe;
         }
 
         public ObservableCollection<Employe> GetListeEmployes()

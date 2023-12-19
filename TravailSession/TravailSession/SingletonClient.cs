@@ -18,21 +18,6 @@ namespace TravailSession
         public SingletonClient()
         {
             liste = new ObservableCollection<Client>();
-            liste.Add(new Client { Identifiant = 100, Nom = "Robot", Adresse = "Library", NumeroTelephone = "819-101-0101", Email = "bookburner@gmail.com" });
-            liste.Add(new Client { Identifiant = 101, Nom = "Lolan", Adresse = "District 9", NumeroTelephone = "819-609-0341", Email = "grade9@gmail.com" });
-            liste.Add(new Client { Identifiant = 420, Nom = "Nutsack", Adresse = "District 12", NumeroTelephone = "819-420-6969", Email = "stoner@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
-            liste.Add(new Client { Identifiant = 600, Nom = "BongBong", Adresse = "District 12", NumeroTelephone = "819-050-5050", Email = "bong@gmail.com" });
         }
 
         public static SingletonClient getInstance()

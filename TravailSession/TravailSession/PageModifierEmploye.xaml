@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="TravailSession.PageModifierEmploye"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TravailSession"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="LightPink">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Modification d'un employé" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="34" Margin="0 25 20 30"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <TextBox Header="Nom de l'employé" x:Name="tbxModifierNomEmploye" Width="250"/>
+            <TextBlock x:Name="tblModifierNomEmployeErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <TextBox Header="Prénom de l'employé" x:Name="tbxModifierPrenomEmploye" Width="250"/>
+            <TextBlock x:Name="tblModifierPrenomEmployeErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <TextBox Header="Email de l'employé" x:Name="tbxModifierEmailEmploye" Width="250"/>
+            <TextBlock x:Name="tblModifierEmailEmployeErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <TextBox Header="Adresse de l'employé" x:Name="tbxModifierAdresseEmploye" Width="250"/>
+            <TextBlock x:Name="tblModifierAdresseEmployeErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <NumberBox Header="Taux horaire de l'employé (au moins 15$/heure)" x:Name="nbxModifierTauxHoraireEmploye" Width="250"/>
+            <TextBlock x:Name="tblModifierTauxHoraireEmployeErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <TextBox Header="Photo d'identité (URL)" x:Name="tbxModifierPhotoIdentiteEmploye" Width="250"/>
+            <TextBlock x:Name="tblModifierPhotoIdentiteEmployeErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 0 10 0" >
+            <RadioButtons x:Name="brModifierStatus" Header="Status de l'employé">
+                <x:String>Journalier</x:String>
+                <x:String>Permanent</x:String>
+            </RadioButtons>
+            <TextBlock x:Name="tblModifierStatusEmployeErreur" Text="" Foreground="Red"/>
+        </StackPanel>
+
+        <Button x:Name="btConfirmerModifierEmploye" Content="Modifier" Click="btConfirmerModifierEmploye_Click" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
+        Margin="20" Width="100" Background="LimeGreen" FontSize="20" />
+
+    </Grid>
+</Page>

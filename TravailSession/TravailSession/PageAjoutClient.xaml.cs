@@ -68,6 +68,7 @@ namespace TravailSession
                     Email = tbxEmailClient.Text
                 };
                 SingletonClient.getInstance().Ajouter(client);
+                this.Frame.Navigate(typeof(PageListeClient));
             }
         }
 

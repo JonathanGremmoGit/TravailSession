@@ -109,6 +109,7 @@ namespace TravailSession
                     Statut = brStatus.SelectedItem.ToString()
                 };
                 SingletonEmploye.getInstance().Ajouter(employe);
+                this.Frame.Navigate(typeof(PageListeEmploye));
             }
         }
 

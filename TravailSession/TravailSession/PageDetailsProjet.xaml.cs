@@ -21,18 +21,31 @@ namespace TravailSession
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class PageListeProjet : Page
+    public sealed partial class PageDetailsProjet : Page
     {
-        public PageListeProjet()
+        int index = -1;
+        public PageDetailsProjet()
         {
             this.InitializeComponent();
-            gvListeProjets.ItemsSource = SingletonProjet.getInstance().GetListeProjets();
         }
 
-        private void gvListeProjets_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (gvListeProjets.SelectedIndex >= 0)
-            this.Frame.Navigate(typeof(PageDetailsProjet), gvListeProjets.SelectedIndex);
+            if (e.Parameter is not null)
+            {
+                index = (int)e.Parameter;
+                Projet projet = SingletonProjet.getInstance().getProjet(index);
+
+                tblDetailsTitreProjet.Text = projet.Titre;
+                tblDetailsDateDebutProjet.Text = projet.DateDebut.ToString();
+                tblDetailsDescriptionProjet.Text = projet.Description;
+                tblDetailsBudgetProjet.Text = projet.Budget.ToString() + "$";
+            }
+        }
+
+        private void btConfirmerAssignerEmployeProjet_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

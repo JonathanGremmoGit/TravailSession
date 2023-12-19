@@ -88,6 +88,7 @@ namespace TravailSession
                     Statut = "En cours"
                 };
                 SingletonProjet.getInstance().AjouterProjet(projet);
+                this.Frame.Navigate(typeof(PageListeProjet));
             }
         }
 
